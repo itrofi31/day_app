@@ -10,14 +10,6 @@ function App() {
         path='/'
         element={<HomePage />}
       />
-      <Route
-        path='/categories'
-        element={<CategoriesPage />}
-      />
-      <Route
-        path='/test'
-        element={<TestPage />}
-      />
     </Routes>
   );
 }
