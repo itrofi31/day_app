@@ -99,7 +99,7 @@ const HomePageContent = () => {
         </Box>
 
         {/* Fixed Bottom Navigation */}
-        <Box mt={2}>
+        <Box mt={1}>
           <BottomNavigation
             currentView={currentView}
             onDayClick={handleDayClick}

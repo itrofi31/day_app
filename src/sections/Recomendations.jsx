@@ -14,6 +14,7 @@ const RecommendationsSection = ({ showBooks, showMovies, books, movies }) => {
               <Box
                 display='flex'
                 p={2}
+                alignItems={'center'}
               >
                 <CardMedia
                   component='img'
@@ -40,11 +41,12 @@ const RecommendationsSection = ({ showBooks, showMovies, books, movies }) => {
           {movies.map((movie) => (
             <Card
               key={movie.id}
-              sx={{ mb: 2 }}
+              sx={{ mb: 2, borderRadius: 2 }}
             >
               <Box
                 display='flex'
                 p={2}
+                alignItems={'center'}
               >
                 <CardMedia
                   component='img'

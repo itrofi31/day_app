@@ -32,7 +32,7 @@ const DayView = ({
     >
       <Card
         sx={{
-          mb: 2,
+          mb: 1,
           overflow: 'visible',
           position: 'relative',
         }}
@@ -96,18 +96,28 @@ const DayView = ({
         />
       </Card>
 
-      {/* Holidays Section - Fixed Height */}
-      <Card sx={{ mb: 2, bgcolor: bgColor, borderRadius: 2 }}>
-        <CardContent>
-          <Typography
-            variant='h6'
-            gutterBottom
+      <Card
+        sx={{
+          mb: 1,
+          bgcolor: bgColor,
+          borderRadius: 2,
+          overflowY: 'auto',
+          maxHeight: '200px', // Set a maximum height
+          minHeight: '90px', // Set a minimum height
+        }}
+      >
+        <CardContent sx={{ overflowY: 'auto', '&:last-child': { pb: 0 } }}>
+          {/* Enable vertical scrolling */}
+          <Typography variant='h6'>Праздники:</Typography>
+          <List
+            dense
+            sx={{ listStyleType: 'disc', pl: 2 }}
           >
-            Праздники:
-          </Typography>
-          <List dense>
             {currentDay.holidays.map((holiday, index) => (
-              <ListItem key={index}>
+              <ListItem
+                key={index}
+                sx={{ display: 'list-item' }}
+              >
                 <ListItemText primary={holiday} />
               </ListItem>
             ))}
@@ -115,7 +125,6 @@ const DayView = ({
         </CardContent>
       </Card>
 
-      {/* Recommendations Section - Scrollable */}
       <Card
         sx={{
           flex: 1,
@@ -124,10 +133,15 @@ const DayView = ({
           overflow: 'hidden',
           bgcolor: bgColor,
           borderRadius: 2,
+          minHeight: '300px',
         }}
       >
         <CardContent
-          sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+          sx={{
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
         >
           <Typography
             variant='h6'
