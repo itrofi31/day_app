@@ -14,13 +14,13 @@ const RecommendationsSection = ({ showBooks, showMovies, books, movies }) => {
               <Box
                 display='flex'
                 p={2}
-                alignItems={'center'}
+                alignItems={'top'}
               >
                 <CardMedia
                   component='img'
                   image={book.image}
                   alt={book.title}
-                  sx={{ width: 64, height: 80, borderRadius: 1, mr: 2 }}
+                  sx={{ width: 64, height: 80, borderRadius: 1, mr: 2, mt: 2 }}
                 />
                 <Box>
                   <Typography
@@ -46,13 +46,13 @@ const RecommendationsSection = ({ showBooks, showMovies, books, movies }) => {
               <Box
                 display='flex'
                 p={2}
-                alignItems={'center'}
+                alignItems={'top'}
               >
                 <CardMedia
                   component='img'
                   image={movie.image}
                   alt={movie.title}
-                  sx={{ width: 64, height: 80, borderRadius: 1, mr: 2 }}
+                  sx={{ width: 64, height: 80, borderRadius: 1, mr: 2, mt: 2 }}
                 />
                 <Box>
                   <Typography
