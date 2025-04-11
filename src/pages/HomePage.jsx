@@ -53,7 +53,7 @@ const HomePageContent = () => {
 
   return (
     <Box
-      height='100vh'
+      height='110vh'
       p={1}
       bgcolor='background.default'
       display='flex'
