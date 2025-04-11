@@ -28,7 +28,7 @@ const DayView = ({
     <Box
       display='flex'
       flexDirection='column'
-      height='100%'
+      height='120%'
     >
       <Card
         sx={{
@@ -103,7 +103,7 @@ const DayView = ({
           borderRadius: 2,
           overflowY: 'auto',
           maxHeight: '200px', // Set a maximum height
-          minHeight: '90px', // Set a minimum height
+          minHeight: '100px', // Set a minimum height
         }}
       >
         <CardContent sx={{ overflowY: 'auto', '&:last-child': { pb: 0 } }}>
@@ -133,7 +133,7 @@ const DayView = ({
           overflow: 'hidden',
           bgcolor: bgColor,
           borderRadius: 2,
-          minHeight: '300px',
+          minHeight: '400px',
         }}
       >
         <CardContent
