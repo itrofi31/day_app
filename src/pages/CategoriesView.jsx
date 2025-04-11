@@ -5,6 +5,7 @@ import {
   Button,
   Card,
   CardContent,
+  CardMedia,
   Dialog,
   DialogActions,
   DialogContent,
@@ -86,40 +87,63 @@ const CategoriesView = ({ currentCategory, nextCategory, prevCategory }) => {
                 sx={{ mb: 2 }}
               >
                 <CardContent>
-                  <Box>
-                    <Typography
-                      variant='subtitle1'
-                      fontWeight='bold'
-                    >
-                      {fact.title}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      color='text.secondary'
-                      gutterBottom
-                    >
-                      {fact.date}
-                    </Typography>
-                    <Box
-                      display='flex'
-                      alignItems='center'
-                      justifyContent='space-between'
-                    >
-                      <Button
-                        variant='outlined'
-                        size='small'
-                        onClick={() => handleOpenDialog(fact)}
-                        sx={{ mt: 1, borderColor: mainColor, color: mainColor }}
+                  <Box
+                    display={fact.image ? 'flex' : ''}
+                    gap={1}
+                  >
+                    <Box>
+                      <Typography
+                        variant='subtitle1'
+                        fontWeight='bold'
                       >
-                        Узнать больше
-                      </Button>
-                      <IconButton
-                        sx={{ color: mainColor, mt: 1 }}
-                        onClick={() => console.log(`Liked fact: ${fact.title}`)} // Логика для лайка
+                        {fact.title}
+                      </Typography>
+                      <Typography
+                        variant='body2'
+                        color='text.secondary'
+                        gutterBottom
                       >
-                        <Favorite />
-                      </IconButton>
+                        {fact.date}
+                      </Typography>
+                      <Box
+                        display='flex'
+                        alignItems='center'
+                        justifyContent='space-between'
+                      >
+                        <Button
+                          variant='outlined'
+                          size='small'
+                          onClick={() => handleOpenDialog(fact)}
+                          sx={{
+                            mt: 1,
+                            borderColor: mainColor,
+                            color: mainColor,
+                          }}
+                        >
+                          Узнать больше
+                        </Button>
+                        <IconButton
+                          sx={{ color: mainColor, mt: 1 }}
+                          onClick={() =>
+                            console.log(`Liked fact: ${fact.title}`)
+                          } // Логика для лайка
+                        >
+                          <Favorite />
+                        </IconButton>
+                      </Box>
                     </Box>
+                    {fact.image && (
+                      <CardMedia
+                        component='img'
+                        sx={{
+                          width: '100px', // Установите ширину
+                          height: '100px', // Установите высоту
+                          objectFit: 'cover', // Сохранение пропорций изображения
+                          marginTop: '15px',
+                        }}
+                        image={fact.image}
+                      />
+                    )}
                   </Box>
                 </CardContent>
               </Card>
