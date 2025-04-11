@@ -12,7 +12,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { ChevronLeft, ChevronRight, Favorite } from '@mui/icons-material';
 
 // CategoriesView component
 const CategoriesView = ({ currentCategory, nextCategory, prevCategory }) => {
@@ -100,14 +100,26 @@ const CategoriesView = ({ currentCategory, nextCategory, prevCategory }) => {
                     >
                       {fact.date}
                     </Typography>
-                    <Button
-                      variant='outlined'
-                      size='small'
-                      onClick={() => handleOpenDialog(fact)}
-                      sx={{ mt: 1, borderColor: mainColor, color: mainColor }}
+                    <Box
+                      display='flex'
+                      alignItems='center'
+                      justifyContent='space-between'
                     >
-                      Узнать больше
-                    </Button>
+                      <Button
+                        variant='outlined'
+                        size='small'
+                        onClick={() => handleOpenDialog(fact)}
+                        sx={{ mt: 1, borderColor: mainColor, color: mainColor }}
+                      >
+                        Узнать больше
+                      </Button>
+                      <IconButton
+                        sx={{ color: mainColor, mt: 1 }}
+                        onClick={() => console.log(`Liked fact: ${fact.title}`)} // Логика для лайка
+                      >
+                        <Favorite />
+                      </IconButton>
+                    </Box>
                   </Box>
                 </CardContent>
               </Card>
@@ -151,4 +163,5 @@ const CategoriesView = ({ currentCategory, nextCategory, prevCategory }) => {
     </Box>
   );
 };
+
 export default CategoriesView;
